@@ -12,6 +12,11 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             int listGarums = sc.nextInt();
 
+            if(listGarums < 2){
+                System.out.println("Garums nevar but negativs vai mazaks par 2");
+                listGarums = sc.nextInt();
+            }
+
             List<Integer> list = new ArrayList();
             int skaitlis = 0;
             for (int i = 0; i < listGarums; i++) {
