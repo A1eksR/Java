@@ -15,6 +15,8 @@ public class Main {
             skaitlis = sc.nextInt();
             list.add(skaitlis);
         }
+        apstradatListu(list);
+        izvaditListu(list);
     }
     public static List apstradatListu(List<Integer> list){
         Scanner sc = new Scanner(System.in);
