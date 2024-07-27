@@ -12,7 +12,7 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             int listGarums = sc.nextInt();
 
-            while(listGarums < 2){
+            while(listGarums > 2){
                 System.out.println("Garums nevar but negativs vai mazaks par 2");
                 listGarums = sc.nextInt();
             }
