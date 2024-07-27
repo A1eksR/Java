@@ -18,7 +18,7 @@ public class Main {
         apstradatListu(list);
         izvaditListu(list);
     }
-    public static List apstradatListu(List<Integer> list){
+    public static void apstradatListu(List<Integer> list){
         Scanner sc = new Scanner(System.in);
         int jaunaisSkaitlis;
         for(int i = 0; i < list.size(); i++){
@@ -28,7 +28,6 @@ public class Main {
                 list.set(i, jaunaisSkaitlis);
             }
         }
-        return list;
     }
     public static void izvaditListu(List<Integer> list){
         for(int i =0; i < list.size(); i++){
