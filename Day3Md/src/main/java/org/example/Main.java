@@ -16,8 +16,8 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             int garums = sc.nextInt();
             List<String> list = new ArrayList<>();
-
-            for(int i = 0; i < garums + 1; i++){
+            sc.nextLine();
+            for(int i = 0; i < garums; i++){
                 System.out.println("Ievadi lista elementu");
                 String ievade = sc.nextLine();
                 list.add(ievade);
