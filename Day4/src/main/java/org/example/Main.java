@@ -29,14 +29,7 @@ public class Main {
         if(atbile == "j" || atbile == "ja"){
             System.out.println("Cik daudzus dzivniekus gribi pievienot?");
             int petSkaits = sc.nextInt();
-            for (int i = 0; i < petSkaits; i++){
-                System.out.println("Ievadi dzivvnieka vardu, vecumu un veidu!");
-                String vards1 = sc.nextLine();
-                int vecums1 = sc.nextInt();
-                sc.nextLine();
-                String veids1 = sc.nextLine();
-                newPetList.add(new Pet(vards1, vecums1, veids1));
-            }
+            ievaditPet(newPetList, petSkaits);
         }
         writeToFile(newPetList);
     }
@@ -63,5 +56,16 @@ public class Main {
             newPetList = new ArrayList<>();
         }
         return newPetList;
+    }
+    public static void ievaditPet(List<Pet> newPetList, int petSkaits){
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < petSkaits; i++){
+            System.out.println("Ievadi dzivvnieka vardu, vecumu un veidu!");
+            String vards1 = sc.nextLine();
+            int vecums1 = sc.nextInt();
+            sc.nextLine();
+            String veids1 = sc.nextLine();
+            newPetList.add(new Pet(vards1, vecums1, veids1));
+        }
     }
 }
