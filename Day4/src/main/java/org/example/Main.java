@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         List<Pet> newPetList = readFile();
-        if(newPetList == null){
+        if(newPetList.isEmpty()){
             System.out.println("Saraksts ir tuks");
         }
         else{
@@ -24,7 +24,6 @@ public class Main {
             }
         }
         Scanner sc = new Scanner(System.in);
-        List<Pet> petList = new ArrayList<>();
         System.out.println("Vai velies ievadit jaunu majsdzivnieku ? j(ja) n(ne)");
         String atbile = sc.nextLine();
         if(atbile == "j" || atbile == "ja"){
@@ -36,15 +35,14 @@ public class Main {
                 int vecums1 = sc.nextInt();
                 sc.nextLine();
                 String veids1 = sc.nextLine();
-                petList.add(new Pet(vards1, vecums1, veids1));
+                newPetList.add(new Pet(vards1, vecums1, veids1));
             }
         }
-        writeToFile(petList);
+        writeToFile(newPetList);
     }
-    public static void writeToFile(List<Pet> petList){
+    public static void writeToFile(List<Pet> newPetList){
         Gson gson = new Gson();
-        String json = gson.toJson(petList);
-
+        String json = gson.toJson(newPetList);
         try {
             FileWriter myWriter = new FileWriter("filename.txt");
             myWriter.write(json);
@@ -56,14 +54,14 @@ public class Main {
         }
     }
     private static List<Pet> readFile(){
-        List<Pet> petList;
+        List<Pet> newPetList;
         Gson gson = new Gson();
         try{
             String content = Files.readString(Path.of("filename.txt"), StandardCharsets.UTF_8);
-            petList = List.of(gson.fromJson(content, Pet[].class));
+            newPetList = List.of(gson.fromJson(content, Pet[].class));
         }catch (IOException e){
-        petList = new ArrayList<>();
+            newPetList = new ArrayList<>();
         }
-        return petList;
+        return newPetList;
     }
 }
