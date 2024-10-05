@@ -14,7 +14,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        FileOperations.vaiFileIrTuks();
+        List<Pet> newPetList = FileOperations.readFile();
+        if(newPetList.isEmpty()){
+            System.out.println("Saraksts ir tuks");
+        }
+        else{
+            for(int i = 0; i < newPetList.size(); i++){
+                System.out.println(newPetList.get(i));
+            }
+        }
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Ko velies darit ? 1-pievienot jaunu dzivnieku; 2- iziet");
         int atbilde = -1;

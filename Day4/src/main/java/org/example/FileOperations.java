@@ -11,19 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileOperations {
-
-    public static void vaiFileIrTuks(){
-        List<Pet> newPetList = FileOperations.readFile();
-        if(newPetList.isEmpty()){
-            System.out.println("Saraksts ir tuks");
-        }
-        else{
-            for(int i = 0; i < newPetList.size(); i++){
-                System.out.println(newPetList.get(i));
-            }
-        }
-    }
-
     public static void writeToFile(List<Pet> newPetList){
         Gson gson = new Gson();
         String json = gson.toJson(newPetList);
