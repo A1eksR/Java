@@ -34,6 +34,7 @@ public class Main {
                     System.out.println("Cik daudzus dzivniekus gribi pievienot?");
                     int petSkaits = sc.nextInt();
                     ievaditPet(newPetList, petSkaits);
+                    writeToFile(newPetList);
                     break;
                 case 2:
                     break;
@@ -43,7 +44,7 @@ public class Main {
             }
         }
 
-        writeToFile(newPetList);
+
     }
     public static void writeToFile(List<Pet> newPetList){
         Gson gson = new Gson();
