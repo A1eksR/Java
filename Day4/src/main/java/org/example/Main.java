@@ -24,13 +24,25 @@ public class Main {
             }
         }
         Scanner sc = new Scanner(System.in);
-        System.out.println("Vai velies ievadit jaunu majsdzivnieku ? j(ja) n(ne)");
-        String atbile = sc.nextLine();
-        if(atbile == "j" || atbile == "ja"){
-            System.out.println("Cik daudzus dzivniekus gribi pievienot?");
-            int petSkaits = sc.nextInt();
-            ievaditPet(newPetList, petSkaits);
+        System.out.println("Ko velies darit ? 1-pievienot jaunu dzivnieku; 2- iziet");
+        int atbilde = -1;
+
+        while(atbilde != 2){
+            atbilde = sc.nextInt();
+            switch(atbilde){
+                case 1:
+                    System.out.println("Cik daudzus dzivniekus gribi pievienot?");
+                    int petSkaits = sc.nextInt();
+                    ievaditPet(newPetList, petSkaits);
+                    break;
+                case 2:
+                    break;
+                default:
+                    System.out.println("ievadits cits skaitlis");
+                    break;
+            }
         }
+
         writeToFile(newPetList);
     }
     public static void writeToFile(List<Pet> newPetList){

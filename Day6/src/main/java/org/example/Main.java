@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Ievadi skaitli!");
+
         Scanner sc = new Scanner(System.in);
 
-        int a = sc.nextInt();
+        int a = -1;
 
         while(a != 0){
-
+            System.out.println("Ievadi skaitli!");
+            a = sc.nextInt();
             switch(a){
                 case 1:
                     System.out.println(1);
