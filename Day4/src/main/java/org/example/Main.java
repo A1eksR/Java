@@ -39,6 +39,7 @@ public class Main {
                     break;
                 case 2:
                     FileOperations.readFile();
+                    break;
                 case 3:
                     break;
                 default:

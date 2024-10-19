@@ -19,7 +19,7 @@ public class FileOperations {
             myWriter.write(json);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
