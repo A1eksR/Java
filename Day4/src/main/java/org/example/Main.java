@@ -25,10 +25,10 @@ public class Main {
         }
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ko velies darit ? 1-pievienot jaunu dzivnieku; 2- iziet");
+        System.out.println("Ko velies darit ? 1-pievienot jaunu dzivnieku; 2- izvadit dzivniekus; 3- iziet");
         int atbilde = -1;
 
-        while(atbilde != 2){
+        while(atbilde != 3){
             atbilde = sc.nextInt();
             switch(atbilde){
                 case 1:
@@ -38,6 +38,8 @@ public class Main {
                     FileOperations.writeToFile(newPetList);
                     break;
                 case 2:
+                    FileOperations.readFile();
+                case 3:
                     break;
                 default:
                     System.out.println("ievadits cits skaitlis");
